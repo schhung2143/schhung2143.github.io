@@ -1,0 +1,61 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --purple-color: #9b4de0;
+    --web-color: #170f23;
+    --border-color: #383243;
+    --height-music-play: 90px;
+    --width-navbar: 240px;
+    --width-navbar-child: 70px;
+    --width-category: 330px;
+    --height-container-header: 70px;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'roboto', arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.pd-0-8 {
+    padding: 0 8px;
+}
+
+/* btn */
+.circle-btn {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-btn:hover {
+    background-color: #282231;
+    cursor: pointer;
+}
+
+/* animation */
+@keyframes grown {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,127 @@
+@media (max-width: 1590px) {
+    .container {
+        margin-right: 0 !important;
+        padding-left: 48px;
+    }
+
+    .container__header {
+        right: 0 !important;
+    }
+}
+
+@media (max-width: 1112px) {
+    .container {
+        padding-left: 0;
+    }
+
+    /* navbar */
+    .navbar {
+        display: none;
+    }
+
+    .navbar-child {
+        display: block !important;
+    }
+
+    /* container */
+    .container__header {
+        left: var(--width-navbar-child);
+        padding: 0 32px;
+    }
+
+
+    /* play music */
+    .music__play-tool-volume-sidebar {
+        display: none;
+    }
+
+    .music__play-tool-volume {
+        width: 32px;
+    }
+
+    .music__play-song-action-menu {
+        display: none;
+    }
+
+    .music__play-tool-disable {
+        margin-left: 10px;
+    }
+}
+
+/* Table & Mobile */
+@media (max-width: 1023px) {
+    .hidden-TM {
+        display: none !important;
+    }
+
+    .container {
+        padding-left: 0;
+    }
+
+    .container__header-download {
+        display: none;
+    }
+
+    .music__play-song-info {
+        margin-right: 0;
+    }
+
+    .container__body-rank-item {
+        margin-bottom: 16px;
+    }
+}
+
+/* Table */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hidden-table {
+        display: none;
+    }
+
+    .container__header-search {
+        width: 400px;
+    }
+
+    .navbar-child {
+        display: block !important;
+    }
+
+}
+
+/* mobile */
+@media (max-width: 739px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .container__body {
+        padding: 0 24px;
+    }
+
+    .slider {
+        padding: 100px 24px 0;
+    }
+
+    .container__body-recent-songs-topic {
+        padding-bottom: 32px;
+    }
+
+    .container__header{
+        left: 0;
+    }
+
+    .container__header-left-logo {
+        display: block;
+    }
+
+    .container__body-popular {
+        padding-bottom: 48px;
+    }
+
+    .container__header-right-btn:first-child {
+        display: block !important;
+    }
+
+    .navbar-child {
+        display: none !important;
+    }
+}
