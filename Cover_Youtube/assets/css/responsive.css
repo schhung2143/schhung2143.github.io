@@ -1,0 +1,136 @@
+@media (min-width: 1024px) and (max-width: 1312px) {
+    .hidden-1312 {
+        display: none !important;
+    }
+
+    .home-product {
+        margin: 0 16px;
+    }
+
+    .container-header {
+        left: 80px;
+    }
+
+    .wide .l-3 {
+        display: block;
+        flex: 0 0 33.33333% !important;
+        max-width: 33.33333% !important;
+    }
+}
+
+/* Table & Mobile */
+@media (max-width: 1023px) {
+    .hidden-table-mobile {
+        display: none;
+    }
+
+    body {
+        padding-left: 0;
+    }
+
+    .container-header {
+        left: 0;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hidden-table {
+        display: none;
+    }
+
+    .container-header {
+        margin-left: 88px;
+        padding-left: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .home-product {
+        margin: 0;
+    }
+
+    .home-product-reel {
+        padding: 0;
+    }
+
+    .home-product-reel-item-box {
+        margin: 12px 0 0 0;
+    }
+
+    .nav-horizontal__menu-bar{
+        display: none;
+    }
+
+    .btn-mobile-search {
+        display: block !important;
+        position: relative;
+        top: -2px;
+        margin-left: 112px;
+    }
+
+    .nav-horizontal__search {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        z-index: 200;
+    }
+
+    .mobile-search-back {
+        display: block;
+    }
+
+    .nav-horizontal__search-box {
+        width: 72.5%;
+        float: left;
+        background-color: #f2f2f2;
+    }
+
+    .nav-horizontal__search-input-spt {
+        background-color: #f2f2f2;
+        width: 250px;
+    }
+
+    .nav-horizontal__search-input-keyboard {
+        display: none !important;
+    }
+
+    .nav-horizontal__search-btn {
+        display: none;
+    }
+
+    .nav-horizontal__search-mic {
+        background-color: #f2f2f2;
+        border-radius: 50%;
+        margin-right: 12px;
+    }
+
+    .nav-horizontal__search-history {
+        position: fixed;
+        top: var(--height-header);
+        left: 0;
+        width: 100%;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding-left: 2px;
+    }
+
+    .mobile-search-history:checked ~ .nav-horizontal__search {
+        display: flex;
+    }
+
+    .nav-horizontal__tool-user-img {
+        width: 28px;
+    }
+
+    .footer {
+        display: flex;
+    }
+}
