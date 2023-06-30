@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
     border-left: 3px solid transparent;
 }
 
-.navbar__body-item:nth-child(2) {
+.navbar__body-item.active {
     border-left: 3px solid var(--purple-color);
     background-color: #393243;
 }
@@ -322,7 +322,7 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.navbar-child-body-btn:first-child {
+.navbar-child-body-btn.active {
     background-color: #40384e;
 }
 
@@ -1131,7 +1131,7 @@ body::-webkit-scrollbar {
     font-size: 1.2rem;
 }
 
-.container__body-new-opition-btn:first-child {
+.container__body-new-opition-btn.active {
     background-color: var(--purple-color);
     border: 1px solid var(--purple-color);
 }
@@ -2337,8 +2337,8 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.music__play-song-action-heart i:active{
-    color: var(--purple-color);
+.heart-active {
+    color: var(--purple-color) !important;
 }
 
 .music__play-song-action-heart i {
