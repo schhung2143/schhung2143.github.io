@@ -9,6 +9,12 @@
     }
 }
 
+@media (min-width: 1113px) {
+    .music__play-song-info {
+        width: 134px  !important;
+    }
+}
+
 @media (max-width: 1112px) {
     .container {
         padding-left: 0;

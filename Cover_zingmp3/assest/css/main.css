@@ -2315,7 +2315,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     line-height: 2rem;
     text-overflow: clip;
-    overflow: visible;
+    overflow: hidden;
     white-space: nowrap;
 }
 
