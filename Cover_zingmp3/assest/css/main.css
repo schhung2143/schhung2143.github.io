@@ -241,6 +241,9 @@ body::-webkit-scrollbar {
 .navbar__create {
     height: 54px;
     border-top: 1px solid var(--borer-color);
+    position: absolute;
+    left: 0;
+    bottom: var(--height-music-play);
 }
 
 .navbar__create-link {
@@ -2002,6 +2005,7 @@ body::-webkit-scrollbar {
     filter: brightness(0.6);
 }
 
+.category__recent-item-level-pause,
 .category__recent-item-level-play {
     font-size: 1.8rem;
     color: var(--white-color);
@@ -2012,6 +2016,7 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
+.category__recent-item-level-pause:hover,
 .category__recent-item-level-play:hover {
     color: #dadada;
     cursor: pointer;
@@ -2029,8 +2034,13 @@ body::-webkit-scrollbar {
     color: var(--white-color);
 }
 
-.category__recent-item-active .category__recent-item-btn-icon:hover {
+.category__recent-item-active .category__recent-item-btn-menu:hover,
+.category__recent-item-active .category__recent-item-btn-heart:hover {
     background-color: #a35de1;
+}
+
+.category__recent-item-active .category__recent-item-btn-heart i {
+    color: #8140b9;
 }
 
 .category__recent-item-info {
@@ -2079,7 +2089,8 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.category__recent-item-btn-icon {
+.category__recent-item-btn-heart, 
+.category__recent-item-btn-menu {
     margin-right: 8px;
     height: 32px;
     width: 32px;
@@ -2091,12 +2102,14 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.category__recent-item-btn-icon:hover {
+.category__recent-item-btn-heart:hover, 
+.category__recent-item-btn-menu:hover {
     background-color: #50485b;
     cursor: pointer;
 }
 
-.category__recent-item-btn-icon i {
+.category__recent-item-btn-heart i, 
+.category__recent-item-btn-menu i {
     font-size: 1.4rem !important;
     color: var(--white-color);
     padding: 5px;
@@ -2282,10 +2295,15 @@ body::-webkit-scrollbar {
     display: none ;
 }
 
-.music__play.playing .music__playing-action-play i:last-child{
+.music__play.playing .music__playing-action-play i:last-child,
+.music__play.playing .category__recent-item.category__recent-item-active .category__recent-item-level-pause
+{
     display: inline-block !important;
 }
-.music__play.playing .music__playing-play-icon{
+
+.music__play.playing .music__playing-play-icon,
+.music__play.playing .category__recent-item.category__recent-item-active .category__recent-item-level-play
+{
     display: none !important;
 }
 
@@ -2348,7 +2366,9 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.heart-active {
+.heart-active,
+.music__playing-action-random.active i,
+.music__playing-action-repeat.active i{
     color: var(--purple-color) !important;
 }
 
