@@ -1974,6 +1974,58 @@ body::-webkit-scrollbar {
     list-style: none;
 }
 
+.waves {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 6px;
+    width: 28px;
+    transform: translateY(-50%);
+    height: 18px;
+    display: flex;    
+    justify-content: center;
+    align-items: last baseline;
+}
+
+.wave {
+    display: none;  
+    position: relative;
+    background: #fff;
+    height: 100%;
+    width: 3px;
+    border-radius: 50px;
+    animation: wavesAnimate 1.2s linear infinite;
+    margin: 0 1px;
+}   
+
+.wave:nth-child(1) {
+    animation-delay: 0.4s;
+}
+.wave:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.wave:nth-child(3) {
+    animation-delay: 0s;
+}
+.wave:nth-child(4) {
+    animation-delay: 0.2s; 
+}
+.wave:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.waves .wave{
+    animation-play-state: play;
+}
+
+.category.playing .category__recent-item-active .wave {
+    display: block !important;
+}
+
+.category.playing .category__recent-item-active .category__recent-item-level-play {
+    display: none !important;
+}
+
 .category__recent-item.category__recent-item-active {
     background-color: var(--purple-color);
 }
@@ -2003,9 +2055,9 @@ body::-webkit-scrollbar {
     cursor: pointer;
     margin-right: 10px;
     filter: brightness(0.6);
+    position: relative;
 }
 
-.category__recent-item-level-pause,
 .category__recent-item-level-play {
     font-size: 1.8rem;
     color: var(--white-color);
@@ -2016,7 +2068,6 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
-.category__recent-item-level-pause:hover,
 .category__recent-item-level-play:hover {
     color: #dadada;
     cursor: pointer;
@@ -2295,17 +2346,15 @@ body::-webkit-scrollbar {
     display: none ;
 }
 
-.music__play.playing .music__playing-action-play i:last-child,
-.music__play.playing .category__recent-item.category__recent-item-active .category__recent-item-level-pause
-{
+.music__play.playing .music__playing-action-play i:last-child {
     display: inline-block !important;
 }
 
 .music__play.playing .music__playing-play-icon,
-.music__play.playing .category__recent-item.category__recent-item-active .category__recent-item-level-play
+.music__play.playing .category__recent-item-level-play
 {
-    display: none !important;
-}
+    display: none;
+}   
 
 .music__play-song {
     display: flex;
