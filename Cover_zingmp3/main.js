@@ -1,33 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-//--container__body-new-opition btn (focus )
-const btn_opition = $$('.container__body-new-opition-btn');
-btn_opition.forEach((btn) => {
-    btn.onclick = function() {
-        $('.container__body-new-opition-btn.active').classList.remove('active');
-        this.classList.add('active');
-    }
-});
-
-//--navbar-child-body-btn (focus navbar child)
-const navbarchild = $$('.navbar-child-body-btn');
-navbarchild.forEach((nav) => {
-    nav.onclick = function() {
-        $('.navbar-child-body-btn.active').classList.remove('active');
-        this.classList.add('active');
-    }
-})
-
-//--navbar__body-item focus
-const items = $$('.navbar__body-item');
-items.forEach((item) => {
-    item.onclick = function() {
-        $('.navbar__body-item.active').classList.remove('active');
-        this.classList.add('active');
-    }
-})
-
 //-- Playlist 
 const player = $('.music__play')
 const playing = $('.music__playing-action-play');
@@ -45,6 +18,10 @@ const randombtn = $('.music__playing-action-random');
 const repeatbtn = $('.music__playing-action-repeat');
 const nextbtn = $('.music__playing-action-next');
 const prevbtn = $('.music__playing-action-before');
+const btn_opition = $$('.container__body-new-opition-btn');
+const navbarchild = $$('.navbar-child-body-btn');
+const items = $$('.navbar__body-item');
+const category = $('.category')
 
 //-- list songs
 const app = {
@@ -92,9 +69,15 @@ const app = {
             <li class="category__recent-item ${index === this.currentIndex ? 'category__recent-item-active' : ' '}" data-index = "${index}">
             <div class="category__recent-item-level">
                 <img src="${song.img}" alt="Anh" class="category__recent-item-img">
-                <div class="music__playing-action-play">
+                <div class="category__recent-item-play">
                     <i class="category__recent-item-level-play fa-solid fa-play"></i>
-                    <i class="category__recent-item-level-pause fa-solid fa-pause"></i>
+                    <div class="waves">
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                    </div>
                 </div> 
                 <div class="category__recent-item-info">
                     <div class="category__recent-item-name">${song.name}</div>
@@ -128,6 +111,30 @@ const app = {
     handleEvents: function() {
         const _this = this;
 
+        //--container__body-new-opition btn (focus )
+        btn_opition.forEach((btn) => {
+            btn.onclick = function() {
+                $('.container__body-new-opition-btn.active').classList.remove('active');
+                this.classList.add('active');
+            }
+        });
+
+        //--navbar-child-body-btn (focus navbar child)
+        navbarchild.forEach((nav) => {
+            nav.onclick = function() {
+                $('.navbar-child-body-btn.active').classList.remove('active');
+                this.classList.add('active');
+            }
+        })
+
+        //--navbar__body-item focus
+        items.forEach((item) => {
+            item.onclick = function() {
+                $('.navbar__body-item.active').classList.remove('active');
+                this.classList.add('active');
+            }
+        })
+
         //--action button heart (nut tha tym)
         heart.onclick = function() {
             const openheart = $('.music__play-song-action-heart i');
@@ -147,12 +154,14 @@ const app = {
         audio.onplay = function() {
             _this.isPlaying = true;
             player.classList.add('playing');
+            category.classList.add('playing');
         }
 
         //khi song play
         audio.onpause = function() {
             _this.isPlaying = false;
             player.classList.remove('playing');
+            category.classList.remove('playing');
         }
 
 
