@@ -426,6 +426,7 @@ body::-webkit-scrollbar {
     height: 100%;
     background-color: var(--web-color);
     margin-right: var(--width-category); 
+    transition: all 0.3s;
 }
 
 .container__header {
@@ -440,6 +441,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    transition: all 0.3s;
 }
 
 .container__header-left-logo {
@@ -1762,6 +1764,8 @@ body::-webkit-scrollbar {
     border-left: 1px solid var(--border-color);
     overflow-y: auto;
     z-index: 1;
+    transition: all 0.3s;
+    animation: oncate linear 0.3s;
 }
 
 .category::-webkit-scrollbar {
@@ -1780,34 +1784,43 @@ body::-webkit-scrollbar {
     z-index: 3;
 }
 
-.category__header-select {
+.category__header-toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     height: 34px;
-    width: 234px;
-    background-color: #2a2139;
+    min-width: 234px;
+    background: #2a2139;
+    border: 3px solid #2a2139;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.category__header-select-btn.category__header-select-btn-active {
-    border-radius: 20px;
-    line-height: 1.8rem;
-    background-color: #6a6475;
-    color: var(--white-color);
-    padding: 5px 0;
-    flex: 1.2;
-}
-
-.category__header-select-btn {
-    font-size: 1.2rem;
-    color: #dadada;
-    font-weight: 600;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    flex: 1;
+    color: #fff;
     cursor: pointer;
+}
+
+.category__header-toggle::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background-color: #6a6475;
+    transition: all .3s;
+}
+
+.category__header-toggle span{ 
+    font-size: 1.2rem;
+    padding: 6px 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.category__header-select:checked + .category__header-toggle::before {
+    left: 50%;
+}
+
+.category__header-toggle span:hover {
+    filter: brightness(1.2);
 }
 
 .category_menu {
@@ -1961,6 +1974,9 @@ body::-webkit-scrollbar {
 
 .category__recent-list {
     padding-left: 0;
+    transform-origin: top;
+    animation: grown ease-in 0.3;
+    will-change: transform, opacity;
 }
 
 .category__recent-item {
@@ -1972,6 +1988,10 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     list-style: none;
+}
+
+.category__recent-item-level-play {
+    z-index: 2;
 }
 
 .waves {
@@ -2191,25 +2211,36 @@ body::-webkit-scrollbar {
     margin-top: 2px;
 }
 
-.category__body-heading-auto {
+.category__body-heading-toggle-auto {
     height: 15px;
     width: 24px;
     border-radius: 20px;
-    background-color: var(--purple-color);
+    background-color: #888;
     margin: 0 15px;
     border: none;
     position: relative;
     cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.category__body-heading-auto-circle {
-    height: 15px;
-    width: 15px;
-    background-color: var(--white-color);
-    border-radius: 50%;
+.category__body-heading-toggle-auto.active {
+    background-color: var(--purple-color);
+}
+
+.category__body-heading-toggle-auto::before {
+    content: '';
     position: absolute;
-    right: 0;
-    top: 0;
+    width: 62.5%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background-color: var(--white-color);
+    transition: all .3s;
+}
+
+.category__body-heading-auto:checked + .category__body-heading-toggle-auto::before {
+    left: 50%;
 }
 
 .category__body-list {
@@ -2274,14 +2305,19 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    width: 160px;
 }
 
 .category__body-item-level-name {
     font-size: 1.4rem;
+    width: 160px;
     line-height: 1.7rem;
     font-weight: 550;
     color: var(--white-color);
     cursor: default;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .category__body-item-level-sing {
@@ -2912,6 +2948,18 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
+.music__play-tool-volume-icon i:last-child {
+    display: none;
+}
+
+.music__play-tool-volume-icon.mute i:first-child {
+    display: none;
+}
+
+.music__play-tool-volume-icon.mute i:last-child {
+    display: block !important;
+}
+
 .music__play-tool-list {
     background-color: var(--purple-color);
     height: 30px;
@@ -2932,10 +2980,6 @@ body::-webkit-scrollbar {
 .music__play-tool-disable {
     border-left: 1px solid #2b2433;
     margin-left: 20px;
-}
-
-.music__play-tool-list-checker:checked ~ .category {
-    display: block;
 }
 
 /*  */
