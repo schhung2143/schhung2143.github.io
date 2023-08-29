@@ -2,10 +2,12 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 //-- Playlist 
+const header = $('.container__header');
+const container = $('.container');
 const player = $('.music__play')
 const playing = $('.music__playing-action-play');
-const playbtn = $('.category__recent-item-play');
 const playlist = $('.category__recent-list');
+const listsong = $('.category__body-list')
 const audio = $('.music_audio');
 const progress = $('.music__playing-progress');
 const songname = $('.music__play-song-info-name');
@@ -21,7 +23,13 @@ const prevbtn = $('.music__playing-action-before');
 const btn_opition = $$('.container__body-new-opition-btn');
 const navbarchild = $$('.navbar-child-body-btn');
 const items = $$('.navbar__body-item');
-const category = $('.category')
+const category = $('.category');
+const toggle = $('.category__header-select');
+const toggleAuto = $('.category__body-heading-auto');
+const auto = $('.category__body-heading-toggle-auto');
+const listCategory = $('.music__play-tool-list');
+const volume = $('.music__play-tool-volume-sidebar');
+const volumebtn = $('.music__play-tool-volume-icon')
 
 //-- list songs
 const app = {
@@ -30,6 +38,9 @@ const app = {
     isRandom: false,
     isRepeat: false,
     isheart: false,
+    isAuto: false,
+    isCategory: false,
+    ismute: false,
     songs: [
         {
             name: 'Đã Lỡ Yêu Em Nhiều',
@@ -60,7 +71,178 @@ const app = {
             singer: 'Thanh Bình',
             music: './assest/music/maimai.mp3',
             img: './assest/img/maimaikolaanh.jpg'
+        },
+        {
+            name: '3107',
+            singer: 'ft. Nâu. Duongg',
+            music: './assest/music/3107.mp3',
+            img: './assest/img/3107.jpg'
+        },
+        {
+            name: 'Ánh sao và bầu trời',
+            singer: 'T.R.I x Cá',
+            music: './assest/music/anhsaovabautroi.mp3',
+            img: './assest/img/anhsaovabautroi.jpg'
+        },
+        {
+            name: 'Ừ có anh đây',
+            singer: 'Tino',
+            music: './assest/music/coanhday.mp3',
+            img: './assest/img/ucoanhday.jpg'
+        },
+        {
+            name: 'Có em',
+            singer: 'Madihu',
+            music: './assest/music/coem.mp3',
+            img: './assest/img/coem.jpg'
+        },
+        {
+            name: 'Như anh đã thấy em',
+            singer: 'PhucXp ft. Freak D',
+            music: './assest/music/dathayem.mp3',
+            img: './assest/img/nhuanhdathayem.jpg'
+        },
+        {
+            name: `Don't côi`,
+            singer: 'RPT Orijinn x Ronboogz',
+            music: './assest/music/dontcoi.mp3',
+            img: './assest/img/dontcoi.jpg'
+        },
+        {
+            name: 'Kẻ điên tin vào tình yêu',
+            singer: 'Lil Z',
+            music: './assest/music/kedien.mp3',
+            img: './assest/img/kedientinvaotinhyeu.jpg'
+        },
+        {
+            name: 'Lạc nhau có phải muôn đời',
+            singer: 'Erik',
+            music: './assest/music/lacnhau.mp3',
+            img: './assest/img/lacnhau.jpg'
+        },
+        {
+            name: 'Lan man',
+            singer: 'Ronboogz',
+            music: './assest/music/lanman.mp3',
+            img: './assest/img/lanman.jpg'
+        },
+        {
+            name: 'Một nhà',
+            singer: 'Da laD',
+            music: './assest/music/motnha.mp3',
+            img: './assest/img/motnha.jpg'
+        },
+        {
+            name: 'Muộn rồi mà sao còn',
+            singer: 'Sơn Tùng M-TP',
+            music: './assest/music/muonroi.mp3',
+            img: './assest/img/Sơn_Tùng_M-TP_-_Muộn_rồi_mà_sao_còn.png'
+        },
+        {
+            name: 'Nơi này có anh',
+            singer: 'Sơn Tùng M-TP',
+            music: './assest/music/noinaycoanh.mp3',
+            img: './assest/img/noinaycoanh.jpg'
+        },
+        {
+            name: 'Vi anh đâu có biết',
+            singer: 'Mahihu',
+            music: './assest/music/vianhdaucobt.mp3',
+            img: './assest/img/vianhdaucobiet.jpg'
         }
+    ],
+
+    listsongs: [
+        {
+            name: 'Kẻ điên tin vào tình yêu',
+            singer: 'Lil Z',
+            music: './assest/music/kedien.mp3',
+            img: './assest/img/kedientinvaotinhyeu.jpg'
+        },
+        {
+            name: '3107',
+            singer: 'ft. Nâu. Duongg',
+            music: './assest/music/3107.mp3',
+            img: './assest/img/3107.jpg'
+        },
+        {
+            name: 'Ánh sao vào bầu trời',
+            singer: 'T.R.I x Cá',
+            music: './assest/music/anhsaovabautroi.mp3',
+            img: './assest/img/anhsaovabautroi.jpg'
+        },
+        {
+            name: 'Có em',
+            singer: 'Madihu',
+            music: './assest/music/coem.mp3',
+            img: './assest/img/coem.jpg'
+        },
+        {
+            name: `Don't côi`,
+            singer: 'RPT Orijinn x Ronboogz',
+            music: './assest/music/dontcoi.mp3',
+            img: './assest/img/dontcoi.jpg'
+        },
+        {
+            name: 'Forget me now',
+            singer: 'Fishy ft. Trí Dũng',
+            music: './assest/music/forgetmenow.mp3',
+            img: './assest/img/forgetmenow.jpg'
+        },
+        {
+            name: 'Như Anh đã thấy em',
+            singer: 'PhucXp ft. Freak D',
+            music: './assest/music/dathayem.mp3',
+            img: './assest/img/nhuanhdathayem.jpg'
+        },
+        {
+            name: 'Nơi này có anh',
+            singer: 'Sơn Tùng M-TP',
+            music: './assest/music/noinaycoanh.mp3',
+            img: './assest/img/noinaycoanh.jpg'
+        },
+        {
+            name: 'Muộn rồi mà sao còn',
+            singer: 'Sơn Tùng M-TP',
+            music: './assest/music/muonroi.mp3',
+            img: './assest/img/Sơn_Tùng_M-TP_-_Muộn_rồi_mà_sao_còn.png'
+        },
+        {
+            name: 'Thằng Điên',
+            singer: 'JustaTee x Phương Ly',
+            music: './assest/music/thangdien.mp3',
+            img: './assest/img/thangdien.jpg'
+        },
+        {
+            name: 'Vì anh đâu có biết',
+            singer: 'Madihu',
+            music: './assest/music/vianhdaucobt.mp3',
+            img: './assest/img/vianhdaucobiet.jpg'
+        },
+        {
+            name: 'Ừ có anh đây',
+            singer: 'Tino',
+            music: './assest/music/coanhday.mp3',
+            img: './assest/img/ucoanhday.jpg'
+        },
+        {
+            name: 'Lạc nhau có phải muôn đời',
+            singer: 'Erik',
+            music: './assest/music/lacnhau.mp3',
+            img: './assest/img/lacnhau.jpg'
+        },
+        {
+            name: 'Một nhà',
+            singer: 'Da LaD',
+            music: './assest/music/motnha.mp3',
+            img: './assest/img/motnha.jpg'
+        },
+        {
+            name: 'Lan Man',
+            singer: 'Ronboogz ',
+            music: './assest/music/lanman.mp3',
+            img: './assest/img/lanman.jpg'
+        },
     ],
 
     render: function() {
@@ -97,7 +279,31 @@ const app = {
         </li>
             `
         })
+
+        const html2 = this.listsongs.map((song, index) => {
+            return `
+            <li class="category__body-item data-index = "${index}"">
+                <div class="category__body-item-level">
+                    <img src="${song.img}" alt="Anh" class="category__body-item-level-img">
+                    <i class="category__body-item-level-play fa-solid fa-play"></i>
+                    <div class="category__body-item-level-info">
+                        <div class="category__body-item-level-name">${song.name}</div>
+                        <div class="category__body-item-level-sing">${song.singer}</div>
+                    </div>
+                </div>
+                <div class="category__body-item-btn">
+                    <div class="category__body-item-btn-icon">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="category__body-item-btn-icon">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                </div>
+            </li>
+            `
+        })
         playlist.innerHTML = html.join('');
+        listsong.innerHTML = html2.join('');
     },
 
     defineProperties: function() {
@@ -150,6 +356,12 @@ const app = {
             }
         }
 
+        //hanh dong click vao nut play o list song
+        const playbtn = $('.category__recent-item-play')    
+        // playbtn.onclick = function() {
+        //     playing.click();
+        // }
+
         //khi song play
         audio.onplay = function() {
             _this.isPlaying = true;
@@ -157,7 +369,7 @@ const app = {
             category.classList.add('playing');
         }
 
-        //khi song play
+        //khi song pause
         audio.onpause = function() {
             _this.isPlaying = false;
             player.classList.remove('playing');
@@ -190,6 +402,17 @@ const app = {
         progress.onchange = function(e) {
             const seektime = e.target.value/100 * audio.duration;
             audio.currentTime = seektime;
+        }
+
+        //khi ly khi dieu chinh am thanh
+        volume.onchange = function(e) {
+            let sound = e.target.value/100;
+            audio.volume = sound;
+            if(audio.volume == 0) {
+                volumebtn.classList.add('mute');
+            } else {
+                volumebtn.classList.remove('mute');
+            }
         }
 
         //khi next song 
@@ -226,12 +449,20 @@ const app = {
             repeatbtn.classList.toggle("active", _this.isRepeat);
         }
 
+        //bat/tat tu dong phat nhac
+        toggleAuto.onclick = function() {
+            _this.isAuto = !_this.isAuto;
+            auto.classList.toggle("active", _this.isAuto);
+        }
+
         // khi ket thuc 1 song ended song
         audio.onended = function() {
-            if(_this.isRepeat) {
+            if(_this.isAuto) {
+                if(_this.isRepeat) {
                 audio.play();
-            } else {
-                nextbtn.click();
+                } else {
+                    nextbtn.click();
+                }
             }
         }
 
@@ -255,6 +486,42 @@ const app = {
                     _this.render();
                     audio.play();
                 }
+            }
+        }
+
+        //đóng mỏ ds nghe gần đây
+        toggle.onclick = function() {
+            if(toggle.checked) {
+                playlist.classList.add('hidden');
+            } else {
+                playlist.classList.remove('hidden');
+            }
+        }
+
+        //Đóng mở DS bài hát
+        listCategory.onclick = function() {
+            _this.isCategory = !_this.isCategory;
+            if(_this.isCategory) {
+                category.classList.remove('hidden');
+                header.style.right = 330 + 'px';
+                container.style.marginRight = 330 + 'px';
+            } else {
+                category.classList.add('hidden');
+                header.style.right = 0;
+                container.style.marginRight = 0;
+            }
+        }
+
+        //click vao nut volume
+        volumebtn.onclick = function() {
+            _this.ismute = !_this.ismute;
+            volumebtn.classList.toggle('mute', _this.ismute);
+            if(!_this.ismute) {
+                audio.volume = 1;
+                volume.value = 100;
+            } else {
+                audio.volume = 0;
+                volume.value = 0;
             }
         }
     },
