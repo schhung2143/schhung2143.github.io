@@ -2026,10 +2026,11 @@
                     <!-- category -->
                     <div class="category hidden-TM">
                         <div class="category__header">
-                            <div class="category__header-select">
-                                <button class="category__header-select-btn category__header-select-btn-active">Danh sách phát</button>
-                                <button class="category__header-select-btn">Nghe gần đây</button>
-                            </div>
+                            <input type="checkbox" hidden id="toggle" class="category__header-select">
+                            <label for="toggle" class="category__header-toggle">
+                                <span class="category__header-recent">Nghe gần đây</span>
+                                <span class="category__header-list">Danh sách phát</span>
+                            </label>
                             <div class="circle-btn category__header-btn">
                                 <i class="fa-regular fa-clock"></i>
                             </div>
@@ -2082,227 +2083,13 @@
                                     <h4>Tự động phát</h4>
                                     <p>Gợi ý từ nội dung danh sách phát</p>
                                 </div>
-                                <button class="category__body-heading-auto">
-                                    <div class="category__body-heading-auto-circle"></div>
-                                </button>
+                                <input type="checkbox" hidden id="toggle-auto" class="category__body-heading-auto">
+                                <label for="toggle-auto" class="category__body-heading-toggle-auto">
+                                    <span></span>
+                                </label>
                             </div>
                             <ul class="category__body-list">
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/changthetimdcem.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Chẳng thể tìm được em</div>
-                                            <div class="category__body-item-level-sing">PhucXp ft. Freak D</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/3107.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">3107</div>
-                                            <div class="category__body-item-level-sing">ft. Nâu, Duongg</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/anhsaovabautroi.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Ánh Sao Và Bầu Trời</div>
-                                            <div class="category__body-item-level-sing">T.R.I x Cá</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/coem.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Có em</div>
-                                            <div class="category__body-item-level-sing">Madihu</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/dontcoi.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Don't côi</div>
-                                            <div class="category__body-item-level-sing">RPT Orijinn x Ronboogz</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/forgetmenow.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Forget Me Now</div>
-                                            <div class="category__body-item-level-sing">Fishy ft. Trí Dũng</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/nhuanhdathayem.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Như Anh Đã Thấy Em</div>
-                                            <div class="category__body-item-level-sing">PhucXp ft. Freak D</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/noinaycoanh.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Nơi này có anh</div>
-                                            <div class="category__body-item-level-sing">Sơn Tùng M-TP</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/Sơn_Tùng_M-TP_-_Muộn_rồi_mà_sao_còn.png" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Muộn rồi mà sao còn</div>
-                                            <div class="category__body-item-level-sing">Sơn Tùng M-TP</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/thangdien.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Thằng điên</div>
-                                            <div class="category__body-item-level-sing">JustaTee x Phương Ly</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/vianhdaucobiet.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Vì anh đâu có biết</div>
-                                            <div class="category__body-item-level-sing">Madihu</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="category__body-item">
-                                    <div class="category__body-item-level">
-                                        <img src="./assest/img/ucoanhday.jpg" alt="Anh" class="category__body-item-level-img">
-                                        <i class="category__body-item-level-play fa-solid fa-play"></i>
-                                        <div class="category__body-item-level-info">
-                                            <div class="category__body-item-level-name">Ừ có anh đây</div>
-                                            <div class="category__body-item-level-sing">Tino</div>
-                                        </div>
-                                    </div>
-                                    <div class="category__body-item-btn">
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                        <div class="category__body-item-btn-icon">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </div>
-                                    </div>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -2435,20 +2222,20 @@
             </div>
             <div class="music__playing">
                 <div class="music__playing-action">
-                    <div title="Random songs" class="circle-btn music__playing-action-random">
+                    <div title="Phát ngẫu nhiên" class="circle-btn music__playing-action-random">
                         <i class="fa-solid fa-shuffle"></i>
                     </div>
-                    <div title="Prev song" class="circle-btn music__playing-action-before">
+                    <div class="circle-btn music__playing-action-before">
                         <i class="fa-solid fa-backward-step"></i>
                     </div>
                     <div class="music__playing-action-play">
-                        <i title="Pause" class="music__playing-play-icon fa-regular fa-circle-play"></i>
-                        <i title="Play" class="music__playing-pause-icon fa-regular fa-circle-pause"></i>
+                        <i class="music__playing-play-icon fa-regular fa-circle-play"></i>
+                        <i class="music__playing-pause-icon fa-regular fa-circle-pause"></i>
                     </div>
-                    <div title="Next song" class="circle-btn music__playing-action-next">
+                    <div class="circle-btn music__playing-action-next">
                         <i class="fa-solid fa-forward-step"></i>
                     </div>
-                    <div title="Repeat song" class="circle-btn music__playing-action-repeat">
+                    <div title="Phát lại bài hát" class="circle-btn music__playing-action-repeat">
                         <i class="fa-solid fa-repeat"></i>
                     </div>
                 </div>
@@ -2463,23 +2250,23 @@
                 <div class="circle-btn music__play-tool-MV circle-btn-disable">
                     <i class="fa-solid fa-film"></i>
                 </div>
-                <div class=" circle-btn music__play-tool-lyric">
+                <div title="lyric" class=" circle-btn music__play-tool-lyric">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
-                <div class="circle-btn music__play-tool-window">
+                <div title="window" class="circle-btn music__play-tool-window">
                     <i class="fa-regular fa-window-restore"></i>
                 </div>
                 <div class="music__play-tool-volume">
                     <div class="circle-btn music__play-tool-volume-icon">
                         <i class="fa-solid fa-volume-high"></i>
+                        <i class="fa-solid fa-volume-xmark"></i>
                     </div>
                     <input type="range" class="music__play-tool-volume-sidebar" min="0" max="100" value="100">
                 </div>
                 <div class="music__play-tool-disable">
-                    <label for="category-checker" class="music__play-tool-list">
-                        <input hidden type="checkbox" id="category-checker" class="music__play-tool-list-checker">
+                    <div class="music__play-tool-list">
                         <i class="fa-solid fa-headphones-simple"></i>
-                    </label>
+                    </div>
                 </div>
             </div>
         </div>
